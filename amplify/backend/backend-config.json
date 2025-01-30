@@ -1,0 +1,9 @@
+{
+  "function": {
+    "amplifynexttemplate13e738c6": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  }
+}
