@@ -13,7 +13,10 @@
     },
     "categories": {
       "function": {
-        "amplifynexttemplate13e738c6": {}
+        "amplifynexttemplate13e738c6": {
+          "deploymentBucketName": "amplify-amplifynexttemplate-dev-dc524-deployment",
+          "s3Key": "amplify-builds/amplifynexttemplate13e738c6-317055636931774c7372-build.zip"
+        }
       }
     }
   }
