@@ -12,7 +12,7 @@ const schema = a.schema({
       content: a.string(),
     })
     .authorization((allow) => [allow.publicApiKey()]),
-    User: a.model({
+    UserTest: a.model({
       name: a.string(),
       email: a.string(),
     })
