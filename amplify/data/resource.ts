@@ -24,28 +24,28 @@ const schema = a.schema({
     })
     .authorization((allow) => [allow.publicApiKey()]), // You can add different authorization rules here
   
-  // User: a.model({
-  //   name: a.string(),
-  //   email: a.string(),
-  //   isVerified: a.boolean().default(false),
-  //   role: a.string().default('GUEST'),
-  //   createdAt: a.datetime().default(() => new Date().toISOString()),
-  //   updatedAt: a.datetime(),
-  // }),
-  // Room: a.model({
-  //   title: a.string(),
-  //   description: a.string().optional(),
-  //   createdAt: a.datetime().default(() => new Date().toISOString()),
-  //   updatedAt: a.datetime(),
-  // }),
-  // Message: a.model({
-  //   content: a.string(),
-  //   messageType: a.string().default('TEXT'),
-  //   userId: a.id(),
-  //   roomId: a.id(),
-  //   createdAt: a.datetime(),
-  //   updatedAt: a.datetime(),
-  // }),
+  User: a.model({
+    name: a.string(),
+    email: a.string(),
+    isVerified: a.boolean().default(false),
+    role: a.string().default('GUEST'),
+    createdAt: a.datetime().default(() => new Date().toISOString()),
+    updatedAt: a.datetime(),
+  }),
+  Room: a.model({
+    title: a.string(),
+    description: a.string().optional(),
+    createdAt: a.datetime().default(() => new Date().toISOString()),
+    updatedAt: a.datetime(),
+  }),
+  Message: a.model({
+    content: a.string(),
+    messageType: a.string().default('TEXT'),
+    userId: a.id(),
+    roomId: a.id(),
+    createdAt: a.datetime(),
+    updatedAt: a.datetime(),
+  }),
 });
 
 
