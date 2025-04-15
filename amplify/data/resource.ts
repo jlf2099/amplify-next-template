@@ -29,9 +29,8 @@ const schema = a.schema({
     email: a.string(),
     isVerified: a.boolean().default(false),
     role: a.string().default('GUEST'),
-
   })
-
+  .authorization((allow) => [allow.publicApiKey()]), // 👈 これが必要！
   // Room: a.model({
   //   title: a.string(),
   //   description: a.string().optional(),
