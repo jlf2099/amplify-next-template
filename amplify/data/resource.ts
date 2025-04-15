@@ -1,4 +1,5 @@
 import { type ClientSchema, a, defineData } from "@aws-amplify/backend";
+//import { type ClientSchema, a, defineData,defineModel } from "@aws-amplify/backend";
 
 /*== STEP 1 ===============================================================
 The section below creates a Todo database table with a "content" field. Try
@@ -17,8 +18,36 @@ const schema = a.schema({
       email: a.string(),
     })
     .authorization((allow) => [allow.publicApiKey()]), // You can add different authorization rules here
+    client: a.model({
+      name: a.string(),
+      email: a.string(),
+    })
+    .authorization((allow) => [allow.publicApiKey()]), // You can add different authorization rules here
   
+  // User: a.model({
+  //   name: a.string(),
+  //   email: a.string(),
+  //   isVerified: a.boolean().default(false),
+  //   role: a.string().default('GUEST'),
+  //   createdAt: a.datetime().default(() => new Date().toISOString()),
+  //   updatedAt: a.datetime(),
+  // }),
+  // Room: a.model({
+  //   title: a.string(),
+  //   description: a.string().optional(),
+  //   createdAt: a.datetime().default(() => new Date().toISOString()),
+  //   updatedAt: a.datetime(),
+  // }),
+  // Message: a.model({
+  //   content: a.string(),
+  //   messageType: a.string().default('TEXT'),
+  //   userId: a.id(),
+  //   roomId: a.id(),
+  //   createdAt: a.datetime(),
+  //   updatedAt: a.datetime(),
+  // }),
 });
+
 
 export type Schema = ClientSchema<typeof schema>;
 
