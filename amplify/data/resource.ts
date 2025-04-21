@@ -33,7 +33,7 @@ const schema = a.schema({
 
   Room: a.model({
     title: a.string(),
-    description: a.string().optional(),
+    description: a.string(),
   }).authorization((allow) => [allow.publicApiKey()]), 
   Message: a.model({
     content: a.string(),
