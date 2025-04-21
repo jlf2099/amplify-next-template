@@ -29,18 +29,18 @@ const schema = a.schema({
     email: a.string(),
     isVerified: a.boolean().default(false),
     role: a.string().default('GUEST'),
-  })
-  .authorization((allow) => [allow.publicApiKey()]), // 👈 これが必要！
-  // Room: a.model({
-  //   title: a.string(),
-  //   description: a.string().optional(),
-  // }),
-  // Message: a.model({
-  //   content: a.string(),
-  //   messageType: a.string().default('TEXT'),
-  //   userId: a.id(),
-  //   roomId: a.id(),
-  // }),
+  })  .authorization((allow) => [allow.publicApiKey()]), // 👈 これが必要！
+
+  Room: a.model({
+    title: a.string(),
+    description: a.string().optional(),
+  }).authorization((allow) => [allow.publicApiKey()]), 
+  Message: a.model({
+    content: a.string(),
+    messageType: a.string().default('TEXT'),
+    userId: a.id(),
+    roomId: a.id(),
+  }).authorization((allow) => [allow.publicApiKey()]), 
 });
 
 
